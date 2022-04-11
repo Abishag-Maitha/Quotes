@@ -15,9 +15,9 @@
     </div>
     <hr>
     <div class="buttons my-3">
-        <button class="btn btn-success me-2"><i class="fa-solid fa-thumbs-up"></i> <span>{{qoute.upvote}}</span></button>
-        <button class="btn btn-danger me-2"><i class="fa-solid fa-thumbs-down"></i> <span>{{qoute.downvote}}</span></button>
-        <button class="btn"><i class="fa-solid fa-trash-can text-danger fs-4"></i></button>
+        <button class="btn btn-success me-2" (click)="upvote(index)"><i class="fa-solid fa-thumbs-up"></i> <span>{{qoute.upvote}}</span></button>
+        <button class="btn btn-danger me-2" (click)="downvote(index)"><i class="fa-solid fa-thumbs-down"></i> <span>{{qoute.downvote}}</span></button>
+        <button class="btn" (click)="delete(index)"><i class="fa-solid fa-trash-can text-danger fs-4"></i></button>
     </div>
     <div class="time d-flex justify-content-around">
         <p>Time posted <br> <span>{{qoute.date|date}}</span></p>
