@@ -4,23 +4,23 @@
 </nav>
 
 <!-- Qoute template -->
-<div class="mx-auto w-50 bg-info p-4">
+<div class="mx-auto w-50 bg-info p-4" *ngFor="let qoute of allQoutes; index as index">
     <div class="title">
-        <p>Theme <span></span></p>
+        <p>Theme <span>{{qoute.theme}}</span></p>
     </div>
     <hr>
     <div class="body w-100 text-center my-3 p-3">
-        <p class="text-danger"></p>
-        <p>Author: <span></span></p>
+        <p class="text-danger">{{qoute.body}}</p>
+        <p>Author: <span>{{qoute.author}}</span></p>
     </div>
     <hr>
     <div class="buttons my-3">
-        <button class="btn btn-success me-2"><i class="fa-solid fa-thumbs-up"></i> <span></span></button>
-        <button class="btn btn-danger me-2"><i class="fa-solid fa-thumbs-down"></i> <span></span></button>
+        <button class="btn btn-success me-2"><i class="fa-solid fa-thumbs-up"></i> <span>{{qoute.upvote}}</span></button>
+        <button class="btn btn-danger me-2"><i class="fa-solid fa-thumbs-down"></i> <span>{{qoute.downvote}}</span></button>
         <button class="btn"><i class="fa-solid fa-trash-can text-danger fs-4"></i></button>
     </div>
     <div class="time d-flex justify-content-around">
-        <p>Time posted <br> <span></span></p>
+        <p>Time posted <br> <span>{{qoute.date|date}}</span></p>
         <p>Time elapsed <br> <span></span></p>
     </div>
 </div>
