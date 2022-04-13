@@ -1,5 +1,5 @@
 <nav class="text-center text-white m-3 p-4" id="navbar"> 
-    <h3>YourQoutesHub <i class="fa-regular fa-comment-dots text-danger"></i></h3>
+    <h3>YourQoutesHub <i class="fa-regular fa-comment-dots text-success"></i></h3>
 </nav>
 <app-form (quoteEvent)="addQuote($event)"></app-form>
 
@@ -10,14 +10,14 @@
     </div>
     <hr>
     <div class="body w-100 text-center my-3 p-3">
-        <p class="text-danger fs-3"><i class="fa-solid fa-quote-left fs-3"></i>{{qoute.body}}<i class="fa-solid fa-quote-right fs-3"></i></p>
+        <p class="quote fs-3"><i class="fa-solid fa-quote-left fs-3 text-success"></i>{{qoute.body}}<i class="fa-solid fa-quote-right fs-3 text-success"></i></p>
         <p>Author: <span>{{qoute.author}}</span></p>
     </div>
     
     <div class="buttons my-3">
         <button class="btn btn-success me-2" (click)="upvote(index)"><i class="fa-solid fa-thumbs-up"></i> <span>{{qoute.upvote}}</span></button>
-        <button class="btn btn-danger me-2" (click)="downvote(index)"><i class="fa-solid fa-thumbs-down"></i> <span>{{qoute.downvote}}</span></button>
-        <button class="btn" (click)="delete(index)"><i class="fa-solid fa-trash-can text-danger fs-4"></i></button>
+        <button class="btn btn-color me-2" (click)="downvote(index)"><i class="fa-solid fa-thumbs-down"></i> <span>{{qoute.downvote}}</span></button>
+        <button class="btn" (click)="delete(index)"><i class="fa-solid fa-trash-can fs-4"></i></button>
     </div>
     <div class="time d-flex justify-content-around">
         <p>Time posted <br> <span>{{qoute.date|date}}</span></p>
