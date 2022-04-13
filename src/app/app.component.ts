@@ -12,7 +12,7 @@ export class AppComponent {
   // quote1=new QUOTE("Life","The purpose of our lives is to be happy","Abishag", new Date(),0,0)
   allQoutes:QUOTE[]=[
     new QUOTE("Life","The purpose of our lives is to be happy","Abishag", new Date("2021-10-05"),0,0),
-    new QUOTE("Money","Too many people spend money they earned..to buy things they don't want..to impress people that they don't like.","Mike", new Date("1999-12-04"),0,0),
+    new QUOTE("Money","Too many people spend money they earned..to buy things they don't want..to impress people that they don't like.","Benja", new Date("1999-12-04"),0,0),
     new QUOTE("Water","Water is the driving force of all nature.","Pendo", new Date("2022-03-01"),0,0)
   ]
   delete(index:number){
@@ -29,7 +29,7 @@ export class AppComponent {
   addQuote(data:QUOTE){
     this.allQoutes.push(data)
   }
-  toggle(index:number){
-    this.allQoutes[index].showdescription=!this.allQoutes[index].showdescription
-  }
+  // toggle(index:number){
+  //   this.allQoutes[index].showdescription=!this.allQoutes[index].showdescription
+  // }
 }
