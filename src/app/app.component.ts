@@ -1,5 +1,6 @@
 import { QUOTE } from './quote';
 import { Component } from '@angular/core';
+import { Quote } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -24,5 +25,8 @@ export class AppComponent {
   }
   downvote(index:number){
     this.allQoutes[index].downvote+=1 
+  }
+  addQuote(data:QUOTE){
+    this.allQoutes.push(data)
   }
 }

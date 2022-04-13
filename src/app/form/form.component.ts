@@ -40,6 +40,8 @@ export class FormComponent implements OnInit {
     console.log(form.value)
     let formData=form.value
     let dataSent=new QUOTE(formData.theme, formData.body, formData.author, new Date(formData.date),0,0)
+   this.quoteEvent.emit(dataSent)
+
   }
 
 }
