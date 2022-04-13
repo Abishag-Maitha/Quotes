@@ -5,16 +5,16 @@
 <app-form (quoteEvent)="addQuote($event)"></app-form>
 
 <!-- Qoute template -->
-<div class="mx-auto w-50 bg-info p-4" *ngFor="let qoute of allQoutes; index as index">
+<div class="mx-auto mt-4 w-50 border border-warning rounded p-4" *ngFor="let qoute of allQoutes; index as index">
     <div class="title">
-        <p>Theme <span>{{qoute.theme}}</span></p>
+        <p> <strong>Theme:</strong><span class="text-success ms-3">{{qoute.theme}}</span></p>
     </div>
     <hr>
     <div class="body w-100 text-center my-3 p-3">
         <p class="text-danger">{{qoute.body}}</p>
         <p>Author: <span>{{qoute.author}}</span></p>
     </div>
-    <hr>
+    
     <div class="buttons my-3">
         <button class="btn btn-success me-2" (click)="upvote(index)"><i class="fa-solid fa-thumbs-up"></i> <span>{{qoute.upvote}}</span></button>
         <button class="btn btn-danger me-2" (click)="downvote(index)"><i class="fa-solid fa-thumbs-down"></i> <span>{{qoute.downvote}}</span></button>
@@ -22,7 +22,7 @@
     </div>
     <div class="time d-flex justify-content-around">
         <p>Time posted <br> <span>{{qoute.date|date}}</span></p>
-        <p>Time elapsed <br> <span>{{qoute.date|timeElapsed}}</span></p>
+        <p>Time elapsed <br> <span class="me-3">{{qoute.date|timeElapsed}} days</span></p>
     </div>
     <button class="btn btn-outline-warning" (click)="toggle(index)">See more</button>
     <app-details *ngIf="qoute.showdescription" [quote]="qoute"></app-details>

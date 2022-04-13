@@ -31,11 +31,11 @@
           <label for="date">Date of submission</label>
           <div class="input-group">
             <input ngModel id="date" class="form-control" placeholder="yyyy-mm-dd" name="date" ngbDatepicker #dp="ngbDatepicker">
-          <div>
-            <button class="btn btn-success">Submit</button>
-          </div>
             <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
           </div>
+        </div>
+        <div>
+          <button class="btn btn-success">Submit</button>
         </div>
       </form>
     </div>
@@ -43,9 +43,8 @@
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
     </div>
   </ng-template>
-  
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">New Quote+</button>
-  
+  <div class="text-center"><button class="btn btn-lg btn-outline-primary" (click)="open(content)">New Quote+</button></div>
+    
   <hr>
   
   <pre></pre>
