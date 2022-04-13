@@ -1,17 +1,17 @@
 <nav class="text-center bg-warning m-3 p-4"> 
-    <h3>Gandhi Quotes</h3>
-    <p class="text-primary fs-5">Freedom is never dear at any price.</p>
+    <h3>Pendo Quotes</h3>
+    <p class="text-success fs-5">Freedom is never dear at any price.</p>
 </nav>
 <app-form (quoteEvent)="addQuote($event)"></app-form>
 
 <!-- Qoute template -->
 <div class="mx-auto mt-4 w-50 border border-warning rounded p-4" *ngFor="let qoute of allQoutes; index as index">
     <div class="title">
-        <p> <strong>Theme:</strong><span class="text-success ms-3">{{qoute.theme}}</span></p>
+        <p> <strong>Theme:</strong><span class="text-success ms-3 fw-bold">{{qoute.theme}}</span></p>
     </div>
     <hr>
     <div class="body w-100 text-center my-3 p-3">
-        <p class="text-danger">{{qoute.body}}</p>
+        <p class="text-danger fs-3"><i class="fa-solid fa-quote-left fs-3"></i>{{qoute.body}}<i class="fa-solid fa-quote-right fs-3"></i></p>
         <p>Author: <span>{{qoute.author}}</span></p>
     </div>
     
