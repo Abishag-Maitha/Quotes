@@ -29,4 +29,7 @@ export class AppComponent {
   addQuote(data:QUOTE){
     this.allQoutes.push(data)
   }
+  toggle(index:number){
+    this.allQoutes[index].showdescription=!this.allQoutes[index].showdescription
+  }
 }

@@ -22,6 +22,8 @@
     </div>
     <div class="time d-flex justify-content-around">
         <p>Time posted <br> <span>{{qoute.date|date}}</span></p>
-        <p>Time elapsed <br> <span></span></p>
+        <p>Time elapsed <br> <span>{{qoute.date|timeElapsed}}</span></p>
     </div>
+    <button class="btn btn-outline-warning" (click)="toggle(index)">See more</button>
+    <app-details *ngIf="qoute.showdescription" [quote]="qoute"></app-details>
 </div>
