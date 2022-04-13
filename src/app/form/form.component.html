@@ -1,20 +1,39 @@
 <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <h4 class="modal-title" id="modal-basic-title">Add Quote</h4>
       <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
-      <form>
+     
+      <form #quotedetails="ngForm" (ngSubmit)="submit(quotedetails)">
         <div class="mb-3">
           <label for="theme">Enter theme</label>
           <div class="input-group">
-            <input id="theme" type="text" class="form-control"  name="theme">
+            <input ngModel id="theme" type="text" class="form-control"  name="theme">
           </div>
         </div>
+
         <div class="mb-3">
-          <label for="dateOfBirth">Date of birth</label>
+          <div class="form-floating">
+            <textarea ngModel name="body" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Quote</label>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="author">Author:</label>
           <div class="input-group">
-            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+            <input ngModel id="author" type="text" class="form-control"  name="author">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="date">Date of submission</label>
+          <div class="input-group">
+            <input ngModel id="date" class="form-control" placeholder="yyyy-mm-dd" name="date" ngbDatepicker #dp="ngbDatepicker">
+          <div>
+            <button class="btn btn-success">Submit</button>
+          </div>
             <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
           </div>
         </div>
@@ -25,9 +44,9 @@
     </div>
   </ng-template>
   
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">New Quote+</button>
   
   <hr>
   
-  <pre>{{ closeResult }}</pre>
+  <pre></pre>
   

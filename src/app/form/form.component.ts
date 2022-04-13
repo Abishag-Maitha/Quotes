@@ -1,5 +1,8 @@
+
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter} from '@angular/core';
+import { QUOTE } from '../quote';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
+@Output() quoteEvent=new EventEmitter <QUOTE>()
   closeResult = '';
 
   constructor(private modalService: NgbModal) {}
@@ -31,6 +34,12 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  submit(form:NgForm){
+    console.log(form.value)
+    let formData=form.value
+    let dataSent=new QUOTE(formData.theme, formData.body, formData.author, new Date(formData.date),0,0)
   }
 
 }
